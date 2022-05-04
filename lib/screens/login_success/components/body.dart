@@ -4,6 +4,7 @@ import 'package:shop_app/screens/home/home_screen.dart';
 import 'package:shop_app/size_config.dart';
 
 class Body extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,7 +27,7 @@ class Body extends StatelessWidget {
         SizedBox(
           width: SizeConfig.screenWidth * 0.6,
           child: DefaultButton(
-            text: "Back to home",
+            text: "Proceed to Home Page",
             press: () {
               Navigator.pushNamed(context, HomeScreen.routeName);
             },

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/components/no_account_text.dart';
 import 'package:shop_app/components/socal_card.dart';
 import '../../../size_config.dart';
+import '../../home/home_screen.dart';
+import 'google_sign_in.dart';
 import 'sign_form.dart';
 
 class Body extends StatelessWidget {
@@ -37,7 +40,13 @@ class Body extends StatelessWidget {
                   children: [
                     SocalCard(
                       icon: "assets/icons/google-icon.svg",
-                      press: () {},
+                      press: () {
+                        final provider =
+                        Provider.of<GoogleSignInProvider>(context, listen: false);
+                        provider.signup(context);
+
+                        //Navigator.pushNamed(context, HomeScreen.routeName);
+                      },
                     ),
                     SocalCard(
                       icon: "assets/icons/facebook-2.svg",

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/components/socal_card.dart';
 import 'package:shop_app/constants.dart';
+import 'package:shop_app/screens/sign_in/components/google_sign_in.dart';
 import 'package:shop_app/size_config.dart';
 
 import 'sign_up_form.dart';
@@ -20,7 +22,7 @@ class Body extends StatelessWidget {
                 SizedBox(height: SizeConfig.screenHeight * 0.04), // 4%
                 Text("Register Account", style: headingStyle),
                 Text(
-                  "Complete your details or continue \nwith social media",
+                  "Complete your details or continue \nwith any of your social media accounts",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
@@ -31,7 +33,11 @@ class Body extends StatelessWidget {
                   children: [
                     SocalCard(
                       icon: "assets/icons/google-icon.svg",
-                      press: () {},
+                      press: () {
+                        final provider =
+                        Provider.of<GoogleSignInProvider>(context, listen: false);
+                        provider.signup(context);
+                      },
                     ),
                     SocalCard(
                       icon: "assets/icons/facebook-2.svg",
