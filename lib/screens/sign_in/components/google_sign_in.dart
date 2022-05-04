@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:shop_app/screens/home/home_screen.dart';
+
+import '../../home/home_screen.dart';
 
 class GoogleSignInProvider extends ChangeNotifier{
   // function to implement the google signin
